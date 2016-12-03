@@ -1,0 +1,56 @@
+<div class="fantadrogatiManager offerta">
+	<div class="fm-block-card">
+		<div class="fm-block-section">
+			<div class="fm-block-section-header">
+				Ruolo
+			</div>
+			<div class="fm-block-section-body">
+			    <md-radio-group class="fm-block-radio fm-block-radio-inline fm-block-radio-role" ng-model="vm.offertaOpts.role">
+			     	<md-radio-button value="P">Portiere</md-radio-button>
+			    	<md-radio-button value="D">Difensore</md-radio-button>
+			    	<md-radio-button value="C">Centrocampista</md-radio-button>
+			    	<md-radio-button value="A">Attaccante</md-radio-button>
+			    </md-radio-group>
+			</div>
+		</div>
+		<div class="fm-block-section">
+			<div class="fm-block-section-header">
+				Fascia
+			</div>
+			<div class="fm-block-section-body">
+			    <md-radio-group class="fm-block-radio fm-block-radio-inline fm-block-radio-fascia" ng-model="vm.offertaOpts.fascia">
+			     	<md-radio-button value="1">Prima</md-radio-button>
+			    	<md-radio-button value="2">Seconda</md-radio-button>
+			    	<md-radio-button value="3">Terza</md-radio-button>
+			    </md-radio-group>
+			</div>
+		</div>
+		<div class="fm-block-section">
+			<div class="fm-block-section-header">
+				Giocatore
+			</div>
+			<div class="fm-block-section-body">
+				<md-autocomplete
+				  md-no-cache="true"
+		          md-selected-item="vm.selectedItem"
+		          md-search-text="vm.searchText"
+		          md-items="item in vm.querySearch(vm.searchText)"
+		          md-item-text="item.name"
+		          md-min-length="0"
+		          placeholder="Per quale giocatore vuoi offrire?">
+		        	<md-item-template>
+		        		<span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{item.name}}</span>
+		        	</md-item-template>
+		        	<md-not-found>
+		        		Nessuna corrispondenza
+		        	</md-not-found>
+		      	</md-autocomplete>
+			</div>
+		</div>
+		<div class="fm-block-section">
+			<div class="fm-block-section-body">
+				<md-button class="md-raised md-accent md-hue-1">Invia offerta</md-button>
+			</div>
+		</div>
+	</div>
+</div>

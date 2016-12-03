@@ -1,0 +1,36 @@
+<div class="fm-team">
+    <md-toolbar >
+        <div class="md-toolbar-tools">
+            <h3>
+                <span>{{vm.team.name}}</span>
+            </h3>
+        </div>
+    </md-toolbar>
+    <md-content>
+        <table ng-table="vm.tablePlayers" class="table" show-filter="true">
+            <tr ng-repeat="user in vm.tablePlayers.data">
+                <td title="''">
+                    {{$index+1}}</td>
+                <td title="'Nome'" filter="{ name: 'text'}" sortable="'name'">
+                    {{user.name}}</td>
+                <td title="'Ruolo'" filter="{ role: 'text'}" sortable="'role'">
+                    {{user.role}}</td>
+                <td title="'Squadra'" filter="{ team: 'text'}" sortable="'team'">
+                    {{user.team}}</td>
+                <td title="''">
+                    <input type="number" ng-blur="vm.saveTeams()" class="fm-input-cost" ng-model="user.costo"/></td>
+                <td title="''">
+                    <md-icon class="fm-block-btn-icon color-cancel md-secondary" ng-click="vm.removePlayer(user,vm.team.id)">
+                        <i class="fa fa-trash"></i>
+                    </md-icon></td>
+            </tr>
+            <tr >
+                <td>
+                    Soldi spesi:</td>
+                <td colspan="4" class="td-total-cost">
+                    {{vm.getTotalCost(vm.team.id)}}</td>
+                <td></td>
+            </tr>
+        </table>
+    </md-content>
+</div>

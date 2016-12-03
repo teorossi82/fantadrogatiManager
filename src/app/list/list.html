@@ -1,0 +1,32 @@
+<div class="fantadrogatiManager list">
+	<table ng-table="vm.tableParams" class="table" show-filter="true">
+	    <tr ng-repeat="user in vm.tableParams.data">
+	    	<td title="'Fascia'" filter="{ fascia: 'number'}" sortable="'fascia'">
+	            <input type="number" ng-blur="vm.savePlayers()" class="fm-input-cost" ng-model="user.fascia"/></td>
+	    	<td title="'Nome'" filter="{ name: 'text'}" sortable="'name'">
+	            {{user.name}}</td>
+	        <td title="'Ruolo'" filter="{ role: 'text'}" sortable="'role'">
+	            <input type="text" ng-blur="vm.savePlayers()" class="fm-input-cost" ng-model="user.role"/></td>
+	        <td title="'Squadra'" filter="{ team: 'text'}" sortable="'team'">
+	            {{user.team}}</td>
+	        <td title="'Quotazione'" filter="{ costo: 'number'}" sortable="'costo'">
+	            <input type="number" ng-blur="vm.savePlayers()" class="fm-input-cost" ng-model="user.costo"/></td>
+	        <td title="'PG'" sortable="'pg'">
+	            {{user.pg}}</td>
+	        <td title="'G'" >
+	            {{user.g}}</td>
+	        <td title="'A'">
+	            {{user.a}}</td>
+	        <td title="'AM'">
+	            {{user.am}}</td>
+	        <td title="'ES'">
+	            {{user.es}}</td>
+	        <td title="'MV'">
+	            {{user.mv}}</td>
+	        <td title="'MM'" sortable="'mm'">
+	            {{user.mm}}</td>
+	        <td title="'Proprietario'" filter="{ fteam: 'text'}" sortable="'fteam'">
+	            {{user.fteam}}</td>
+	    </tr>
+	</table>
+</div>

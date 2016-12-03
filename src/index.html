@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>fantadrogatiManager</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+        <div ng-app="fantadrogatiManager">
+            <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+            <!-- bower:css -->
+            <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+            <!-- endbower -->
+            <!-- endbuild -->
+
+            <!-- build:css({.tmp/serve,src}) styles/app.css -->
+            <!-- inject:css -->
+            <!-- css files will be automatically insert here -->
+            <!-- endinject -->
+            <!-- endbuild -->
+            <md-toolbar class="fm-block-fixed-top">
+                <div class="md-toolbar-tools">
+                    <h3>
+                        <span>Fantadrogati Manager</span>
+                    </h3>
+                </div>
+            </md-toolbar>
+            <md-nav-bar class="fm-block-nav-route fm-block-fixed-top fm-bg-light fm-margin-header" md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+                <md-nav-item md-nav-sref="main.list" name="main.list">Lista</md-nav-item>
+                <md-nav-item md-nav-sref="main.fasce" name="main.fasce">Fasce</md-nav-item>
+                <md-nav-item md-nav-sref="main.teams" name="main.teams">Squadre</md-nav-item>
+                <md-nav-item md-nav-sref="main.offerta" name="main.offerta">Offerta</md-nav-item>
+            </md-nav-bar>
+
+            <md-content class="fm-block-content fm-margin-header-subheader">
+                <div ui-view></div>
+            </md-content>
+            <!-- build:js(src) scripts/vendor.js -->
+            <!-- bower:js -->
+            <!-- run `gulp inject` to automatically populate bower script dependencies -->
+            <!-- endbower -->
+            <!-- endbuild -->
+            <script type="text/javascript" src="js/config.js"></script>
+
+            <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+            <!-- inject:js -->
+            <!-- js files will be automatically insert here -->
+            <!-- endinject -->
+
+            <!-- inject:partials -->
+            <!-- angular templates will be automatically converted in js and inserted here -->
+            <!-- endinject -->
+            <!-- endbuild -->
+        </div>
+    </body>
+</html>

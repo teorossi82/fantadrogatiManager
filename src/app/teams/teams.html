@@ -1,0 +1,51 @@
+<div class="fantadrogatiManager teams">
+	<div class="row">
+		<div class="fm-block-teams col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="team in vm.teams">
+			<div class="fm-block-title">{{team.name}}</div>
+			<div class="fm-block-select-player">
+				<md-input-container>
+			        <label>Aggiungi giocatore</label>
+			        <input ng-model="vm.searchPlayer[team.id].name">
+			    </md-input-container>
+				<div class="fm-block-filter-players" ng-if="vm.searchPlayer[team.id].name">
+					<md-list-item class="fm-block-filter-player secondary-button-padding"
+						ng-repeat="player in vm.players | filter:vm.searchPlayer[team.id].name"
+						ng-click="vm.addPlayer(player,team.id)"
+						ng-if="!player.fteam">
+					    <p>{{player.name}}</p>
+					    <md-button class="md-secondary" >{{player.costo}}</md-button>
+					</md-list-item>
+				</div>
+			</div>
+			<div class="fm-block-last-players">
+				<div class="fm-block-subtitle">Ultimi acquisti</div>
+				<div class="fm-block-paragrafo" ng-if="!team.rosa || team.rosa.length===0">Nessun giocatore aggiunto</div>
+				<md-list-item class="fm-block-player" ng-repeat="pl in team.rosa | slice:0:5">
+					<span class="fm-block-role">{{pl.role}}</span>
+				    <p class="fm-block-name"> 
+				    	<md-tooltip md-direction="top">
+				        	{{ pl.name }} - {{pl.team}}
+				        </md-tooltip>
+				    	{{ pl.name }} 
+				    </p>
+				    <input type="number" ng-blur="vm.saveTeam(team)" class="fm-input-cost" ng-model="pl.costo"/>
+				    <md-icon class="fm-block-btn-icon color-cancel md-secondary" ng-click="vm.removePlayer(pl,team.id)">
+				    	<i class="fa fa-trash"></i>
+				    </md-icon>
+				</md-list-item>
+				<md-button ng-click="vm.showTeam($event,team.id)" ng-if="team.rosa.length>5">
+			      Vedi tutti
+			    </md-button>
+			    <md-button ng-click="vm.clearTeam(team.id)" ng-if="team.rosa.length>0">
+			      Svuota
+			    </md-button>
+			</div>
+			<div class="fm-block-costs">
+				<span>
+					Soldi spesi:
+				</span>
+				<span class="fm-block-costs-total">{{vm.getTotalCost(team.id)}}</span>
+			</div>
+		</div>
+	</div>
+</div>

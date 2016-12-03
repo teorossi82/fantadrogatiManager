@@ -1,0 +1,155 @@
+<div class="fantadrogatiManager fasce">
+	<section layout="row" flex>
+
+	    <md-sidenav
+	        class="md-sidenav-left fm-sidenav fm-sidenav-fixed with-header-subheader"
+	        md-component-id="left"
+	        md-is-locked-open="$mdMedia('gt-xs')"
+	        md-whiteframe="2">
+
+	    	<ul class="fm-block-menu-side">
+	    		<li class="fm-block-menu-item">
+	    			<div class="fm-block-menu-item-title">Portieri</div>
+	    			<ul class="fm-block-submenu">
+	    				<li class="fm-block-submenu-item" ng-click="vm.setFascia('P',1)" ng-class="{'active':vm.fasciaActive.role==='P' && vm.fasciaActive.fascia===1}">
+	    					<div class="fm-block-submenu-item-title">Fascia 1</div>
+	    				</li>
+	    			</ul>
+	    		</li>
+	    		<li class="fm-block-menu-item">
+	    			<div class="fm-block-menu-item-title">Difensori</div>
+	    			<ul class="fm-block-submenu">
+	    				<li class="fm-block-submenu-item" ng-click="vm.setFascia('D',1)" ng-class="{'active':vm.fasciaActive.role==='D' && vm.fasciaActive.fascia===1}">
+	    					<div class="fm-block-submenu-item-title">Fascia 1</div>
+	    				</li>
+	    				<li class="fm-block-submenu-item" ng-click="vm.setFascia('D',2)" ng-class="{'active':vm.fasciaActive.role==='D' && vm.fasciaActive.fascia===2}">
+	    					<div class="fm-block-submenu-item-title">Fascia 2</div>
+	    				</li>
+	    				<li class="fm-block-submenu-item" ng-click="vm.setFascia('D',3)" ng-class="{'active':vm.fasciaActive.role==='D' && vm.fasciaActive.fascia===3}">
+	    					<div class="fm-block-submenu-item-title">Fascia 3</div>
+	    				</li>
+	    			</ul>
+	    		</li>
+	    		<li class="fm-block-menu-item">
+	    			<div class="fm-block-menu-item-title">Centrocampisti</div>
+	    			<ul class="fm-block-submenu">
+	    				<li class="fm-block-submenu-item" ng-click="vm.setFascia('C',1)" ng-class="{'active':vm.fasciaActive.role==='C' && vm.fasciaActive.fascia===1}">
+	    					<div class="fm-block-submenu-item-title">Fascia 1</div>
+	    				</li>
+	    				<li class="fm-block-submenu-item" ng-click="vm.setFascia('C',2)" ng-class="{'active':vm.fasciaActive.role==='C' && vm.fasciaActive.fascia===2}">
+	    					<div class="fm-block-submenu-item-title">Fascia 2</div>
+	    				</li>
+	    				<li class="fm-block-submenu-item" ng-click="vm.setFascia('C',3)" ng-class="{'active':vm.fasciaActive.role==='C' && vm.fasciaActive.fascia===3}">
+	    					<div class="fm-block-submenu-item-title">Fascia 3</div>
+	    				</li>
+	    			</ul>
+	    		</li>
+	    		<li class="fm-block-menu-item">
+	    			<div class="fm-block-menu-item-title">Attaccanti</div>
+	    			<ul class="fm-block-submenu">
+	    				<li class="fm-block-submenu-item" ng-click="vm.setFascia('A',1)" ng-class="{'active':vm.fasciaActive.role==='A' && vm.fasciaActive.fascia===1}">
+	    					<div class="fm-block-submenu-item-title">Fascia 1</div>
+	    				</li>
+	    				<li class="fm-block-submenu-item" ng-click="vm.setFascia('A',2)" ng-class="{'active':vm.fasciaActive.role==='A' && vm.fasciaActive.fascia===2}">
+	    					<div class="fm-block-submenu-item-title">Fascia 2</div>
+	    				</li>
+	    				<li class="fm-block-submenu-item" ng-click="vm.setFascia('A',3)" ng-class="{'active':vm.fasciaActive.role==='A' && vm.fasciaActive.fascia===3}">
+	    					<div class="fm-block-submenu-item-title">Fascia 3</div>
+	    				</li>
+	    			</ul>
+	    		</li>
+	    	</ul>
+	    </md-sidenav>
+
+	    <md-content flex class="fm-content with-sidenav-fixed">
+	    	<div class="fm-block-fascia" ng-if="vm.fasciaActive.role==='P'">
+	    		<div class="fm-block-fascia-title" id="fascia-P1">
+	    			Fascia 1 <span class="small">- {{vm.getFasciaPlayers('P',1).length}} giocatori</span>
+	    		</div>
+	    		<div class="fm-block-fascia-content columns-3">
+	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('P',1)">
+					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					 </div>
+	    		</div>
+	    	</div>
+	    	<div class="fm-block-fascia" ng-if="vm.fasciaActive.role==='D'">
+	    		<div class="fm-block-fascia-title" id="fascia-D1">
+	    			Fascia 1 <span class="small">- {{vm.getFasciaPlayers('D',1).length}} giocatori</span>
+	    		</div>
+	    		<div class="fm-block-fascia-content columns-3">
+	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('D',1)">
+					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					 </div>
+	    		</div>
+	    		<div class="fm-block-fascia-title" id="fascia-D2">
+	    			Fascia 2 <span class="small">- {{vm.getFasciaPlayers('D',2).length}} giocatori</span>
+	    		</div>
+	    		<div class="fm-block-fascia-content columns-3">
+	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('D',2)">
+					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					 </div>
+	    		</div>
+	    		<div class="fm-block-fascia-title" id="fascia-D3">
+	    			Fascia 3 <span class="small">- {{vm.getFasciaPlayers('D',3).length}} giocatori</span>
+	    		</div>
+	    		<div class="fm-block-fascia-content columns-3">
+	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('D',3)">
+					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					 </div>
+	    		</div>
+	    	</div>
+	    	<div class="fm-block-fascia" ng-if="vm.fasciaActive.role==='C'">
+	    		<div class="fm-block-fascia-title" id="fascia-C1">
+	    			Fascia 1 <span class="small">- {{vm.getFasciaPlayers('C',1).length}} giocatori</span>
+	    		</div>
+	    		<div class="fm-block-fascia-content columns-3">
+	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('C',1)">
+					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					 </div>
+	    		</div>
+	    		<div class="fm-block-fascia-title" id="fascia-C2">
+	    			Fascia 2 <span class="small">- {{vm.getFasciaPlayers('C',2).length}} giocatori</span>
+	    		</div>
+	    		<div class="fm-block-fascia-content columns-3">
+	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('C',2)">
+					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					 </div>
+	    		</div>
+	    		<div class="fm-block-fascia-title" id="fascia-C3">
+	    			Fascia 3 <span class="small">- {{vm.getFasciaPlayers('C',3).length}} giocatori</span>
+	    		</div>
+	    		<div class="fm-block-fascia-content columns-3">
+	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('C',3)">
+					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					 </div>
+	    		</div>
+	    	</div>
+	    	<div class="fm-block-fascia" ng-if="vm.fasciaActive.role==='A'">
+	    		<div class="fm-block-fascia-title" id="fascia-A1">
+	    			Fascia 1 <span class="small">- {{vm.getFasciaPlayers('A',1).length}} giocatori</span>
+	    		</div>
+	    		<div class="fm-block-fascia-content columns-3">
+	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('A',1)">
+					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					 </div>
+	    		</div>
+	    		<div class="fm-block-fascia-title" id="fascia-A2">
+	    			Fascia 2 <span class="small">- {{vm.getFasciaPlayers('A',2).length}} giocatori</span>
+	    		</div>
+	    		<div class="fm-block-fascia-content columns-3">
+	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('A',2)">
+					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					 </div>
+	    		</div>
+	    		<div class="fm-block-fascia-title" id="fascia-A3">
+	    			Fascia 3 <span class="small">- {{vm.getFasciaPlayers('A',3).length}} giocatori</span>
+	    		</div>
+	    		<div class="fm-block-fascia-content columns-3">
+	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('A',3)">
+					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					 </div>
+	    		</div>
+	    	</div>
+	   	</md-content>
+	</section>
+</div>
