@@ -15,13 +15,24 @@
         vm.teams = TeamsService.getTeams();
         vm.searchPlayer = {};
 
+        vm.getTeams = function(anno,fase){
+            var req = TeamsService.getTeamsFromServer(anno,fase);
+            req.then(function(data){
+                vm.teams = data;
+                //initPlayers(vm.teams);
+            })
+            .catch(function(err){
+                console.log(err);
+            })
+        }
+
         vm.removePlayer = function(p,t){
             TeamsService.removePlayer(p,t);
         };
 
         vm.addPlayer = function(p,t,m){
             TeamsService.addPlayer(p,t);
-            vm.searchPlayer[t].name=""
+            vm.searchPlayer[t].name="";
         };
 
         vm.clearTeam = function(t){
@@ -71,6 +82,13 @@
               $scope.status = 'You cancelled the dialog.';
             });
         };
+
+        vm.getNumPlayerForRole = function(rosa,role){
+            if(!rosa)
+                return "0";
+            var num = _.filter(rosa,{'role':role}) ? _.filter(rosa,{'role':role}).length : "0";
+            return num;
+        }
 
         render();
 

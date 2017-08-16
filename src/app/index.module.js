@@ -12,7 +12,13 @@
       'utilsMdl',
       'ngMaterial',
       'ngTable',
-      'LocalStorageModule'
-  ]);
+      'LocalStorageModule',
+      'btford.socket-io'
+  ])
+  .factory('mySocket', function (socketFactory) {
+      return socketFactory({
+          ioSocket: io.connect('http://localhost:8000')
+      });
+  });
 
 })();

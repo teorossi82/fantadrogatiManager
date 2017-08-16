@@ -13,7 +13,12 @@
             url: '/main',
             templateUrl: 'app/main/main.html',
             controller: 'MainController',
-            controllerAs: 'main'
+            controllerAs: 'main',
+            resolve:{
+                getTeams:['TeamsService',function(TeamsService){
+                    TeamsService.getTeamsFromServer(2017,1);
+                }]
+            }
         })
             .state('main.list', {
             url: '/list',
@@ -46,6 +51,12 @@
             controllerAs: 'vm',
             resolve: {
             }
+        })
+            .state('main.aste', {
+            url: '/aste',
+            templateUrl: 'app/aste/aste.html',
+            controller: 'AsteController',
+            controllerAs: 'vm'
         });
 
         $urlRouterProvider.otherwise('/main');

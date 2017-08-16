@@ -27,8 +27,27 @@
                 var deferred = $q.defer();
                 var promise = $http({
                     cache: false,
-                    //url: "http://www.fantagiaveno.it/quotazioni-calciatori.asp?id=1", 
                     "url":"http://www.gazzetta.it/calcio/fantanews/statistiche/serie-a-2016-17/",
+                    method: "GET",
+                    headers:{}
+                });
+                promise.then(
+                    function(data){
+                        deferred.resolve(data.data); 
+                    }
+                )
+                .catch(
+                    function(err){
+                        deferred.reject(err);
+                    }
+                );
+                return deferred.promise;
+            },
+            getQuote: function () {
+                var deferred = $q.defer();
+                var promise = $http({
+                    cache: false,
+                    url: "http://www.fantagiaveno.it/quotazioni-calciatori.asp", 
                     method: "GET",
                     headers:{}
                 });

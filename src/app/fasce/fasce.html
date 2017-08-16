@@ -68,7 +68,7 @@
 	    		</div>
 	    		<div class="fm-block-fascia-content columns-3">
 	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('P',1)">
-					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					    {{player.name}} ({{player.team.toUpperCase()}}) <span class="fm-block-fascia-costo">{{player.costo}}</span>
 					 </div>
 	    		</div>
 	    	</div>
@@ -78,7 +78,7 @@
 	    		</div>
 	    		<div class="fm-block-fascia-content columns-3">
 	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('D',1)">
-					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					    {{player.name}} ({{player.team.toUpperCase()}}) <span class="fm-block-fascia-costo">{{player.costo}}</span>
 					 </div>
 	    		</div>
 	    		<div class="fm-block-fascia-title" id="fascia-D2">
@@ -86,7 +86,7 @@
 	    		</div>
 	    		<div class="fm-block-fascia-content columns-3">
 	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('D',2)">
-					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					    {{player.name}} ({{player.team.toUpperCase()}}) <span class="fm-block-fascia-costo">{{player.costo}}</span>
 					 </div>
 	    		</div>
 	    		<div class="fm-block-fascia-title" id="fascia-D3">
@@ -94,7 +94,7 @@
 	    		</div>
 	    		<div class="fm-block-fascia-content columns-3">
 	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('D',3)">
-					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					    {{player.name}} ({{player.team.toUpperCase()}}) <span class="fm-block-fascia-costo">{{player.costo}}</span>
 					 </div>
 	    		</div>
 	    	</div>
@@ -104,7 +104,7 @@
 	    		</div>
 	    		<div class="fm-block-fascia-content columns-3">
 	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('C',1)">
-					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					    {{player.name}} ({{player.team.toUpperCase()}}) <span class="fm-block-fascia-costo">{{player.costo}}</span>
 					 </div>
 	    		</div>
 	    		<div class="fm-block-fascia-title" id="fascia-C2">
@@ -112,7 +112,7 @@
 	    		</div>
 	    		<div class="fm-block-fascia-content columns-3">
 	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('C',2)">
-					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					    {{player.name}} ({{player.team.toUpperCase()}}) <span class="fm-block-fascia-costo">{{player.costo}}</span>
 					 </div>
 	    		</div>
 	    		<div class="fm-block-fascia-title" id="fascia-C3">
@@ -120,7 +120,7 @@
 	    		</div>
 	    		<div class="fm-block-fascia-content columns-3">
 	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('C',3)">
-					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					    {{player.name}} ({{player.team.toUpperCase()}}) <span class="fm-block-fascia-costo">{{player.costo}}</span>
 					 </div>
 	    		</div>
 	    	</div>
@@ -130,7 +130,7 @@
 	    		</div>
 	    		<div class="fm-block-fascia-content columns-3">
 	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('A',1)">
-					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					    {{player.name}} ({{player.team.toUpperCase()}}) <span class="fm-block-fascia-costo">{{player.costo}}</span>
 					 </div>
 	    		</div>
 	    		<div class="fm-block-fascia-title" id="fascia-A2">
@@ -138,7 +138,7 @@
 	    		</div>
 	    		<div class="fm-block-fascia-content columns-3">
 	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('A',2)">
-					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					    {{player.name}} ({{player.team.toUpperCase()}}) <span class="fm-block-fascia-costo">{{player.costo}}</span>
 					 </div>
 	    		</div>
 	    		<div class="fm-block-fascia-title" id="fascia-A3">
@@ -146,7 +146,7 @@
 	    		</div>
 	    		<div class="fm-block-fascia-content columns-3">
 	    			<div class="fm-block-fascia-player" ng-class="{'barrato':player.fteam}" ng-repeat="player in vm.getFasciaPlayers('A',3)">
-					    {{player.name}} <span class="fm-block-fascia-costo">{{player.costo}}</span>
+					    {{player.name}} ({{player.team.toUpperCase()}}) <span class="fm-block-fascia-costo">{{player.costo}}</span>
 					 </div>
 	    		</div>
 	    	</div>

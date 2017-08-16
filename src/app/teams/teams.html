@@ -33,12 +33,21 @@
 				    	<i class="fa fa-trash"></i>
 				    </md-icon>
 				</md-list-item>
-				<md-button ng-click="vm.showTeam($event,team.id)" ng-if="team.rosa.length>5">
+				<!-- <md-button ng-click="vm.showTeam($event,team.id)" ng-if="team.rosa.length>5">
 			      Vedi tutti
 			    </md-button>
 			    <md-button ng-click="vm.clearTeam(team.id)" ng-if="team.rosa.length>0">
 			      Svuota
-			    </md-button>
+			    </md-button> -->
+			</div>
+			<div class="fm-block-summary">
+				P: {{vm.getNumPlayerForRole(team.rosa,'P')}} 
+				D: {{vm.getNumPlayerForRole(team.rosa,'D')}} 
+				C: {{vm.getNumPlayerForRole(team.rosa,'C')}} 
+				A: {{vm.getNumPlayerForRole(team.rosa,'A')}}
+				<md-button ng-click="vm.showTeam($event,team.id)" class="md-fab md-mini md-primary">
+					<span class="fa fa-search"></span>
+				</md-button>
 			</div>
 			<div class="fm-block-costs">
 				<span>

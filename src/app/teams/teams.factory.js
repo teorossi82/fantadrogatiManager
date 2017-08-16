@@ -3,6 +3,26 @@
     angular.module("fantadrogatiManager")    
     .factory('teamsFactory', function ($q,$http,AppConfig) {
         return {
+            getTeams: function (anno,fase) {
+                var deferred = $q.defer();
+                var promise = $http({
+                    cache: false,
+                    url: AppConfig.server + "/teams/"+anno+"/"+fase, 
+                    method: "GET",
+                    headers:{}
+                });
+                promise.then(
+                    function(data){
+                        deferred.resolve(data.data); 
+                    }
+                )
+                .catch(
+                    function(err){
+                        deferred.reject(err);
+                    }
+                );
+                return deferred.promise;
+            },
         	saveTeams: function (teams) {
                 var deferred = $q.defer();
                 var promise = $http({

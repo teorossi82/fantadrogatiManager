@@ -49,7 +49,15 @@
 		</div>
 		<div class="fm-block-section">
 			<div class="fm-block-section-body">
-				<md-button class="md-raised md-accent md-hue-1">Invia offerta</md-button>
+				<md-input-container class="md-block" >
+            		<label>Offerta</label>
+            		<input ng-model="vm.offer">
+          		</md-input-container>
+			</div>
+		</div>
+		<div class="fm-block-section">
+			<div class="fm-block-section-body">
+				<md-button class="md-raised md-accent md-hue-1" ng-click="vm.sendOffer()">Invia offerta</md-button>
 			</div>
 		</div>
 	</div>

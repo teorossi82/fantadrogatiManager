@@ -7,10 +7,11 @@
         .controller('OffertaController', OffertaController);
 
     /** @ngInject */
-    function OffertaController($log,$scope,TeamsService) {
+    function OffertaController($log,$scope,TeamsService,mySocket) {
         var vm = this;
         var render = function(){
             getPlAvail(vm.offertaOpts.role,vm.offertaOpts.fascia);
+            mySocket.emit('my other event', { my: 'data' });
         };
         var players = TeamsService.getPlayers();
         var plAvail;
@@ -23,7 +24,7 @@
 
         var getPlAvail = function(r,f){
             plAvail = _.filter(players,function(pl){
-                return pl.role===r && pl.fascia==f;
+                return pl.role===r && pl.fascia==f && !pl.fteam;
             });
         };
 
@@ -43,6 +44,19 @@
                 return (player.name.toLowerCase().indexOf(lowercaseQuery) === 0);
             };
 
+        };
+
+        vm.error=null;
+        vm.sendOffer = function(){
+            if(!vm.selectedItem){
+                vm.error = "Devi selezionare un giocatore";
+                return;
+            }
+            if(!vm.offer){
+                vm.error = "Devi inserire un'offerta";
+                return;
+            }
+            mySocket.emit("sendOffert",{"team":1,"player":vm.selectedItem,"offer":vm.offer});
         };
 
         render();

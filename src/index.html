@@ -36,12 +36,14 @@
                 <md-nav-item md-nav-sref="main.list" name="main.list">Lista</md-nav-item>
                 <md-nav-item md-nav-sref="main.fasce" name="main.fasce">Fasce</md-nav-item>
                 <md-nav-item md-nav-sref="main.teams" name="main.teams">Squadre</md-nav-item>
+                <md-nav-item md-nav-sref="main.aste" name="main.aste">Aste</md-nav-item>
                 <md-nav-item md-nav-sref="main.offerta" name="main.offerta">Offerta</md-nav-item>
             </md-nav-bar>
 
             <md-content class="fm-block-content fm-margin-header-subheader">
                 <div ui-view></div>
             </md-content>
+            <script src="http://localhost:8000/socket.io/socket.io.js"></script>
             <!-- build:js(src) scripts/vendor.js -->
             <!-- bower:js -->
             <!-- run `gulp inject` to automatically populate bower script dependencies -->

@@ -16,7 +16,9 @@
 
         var getFasciaPlayers = function(r,f){
             var pls = _.filter(players,{"role":r,"fascia":f});
-            pls = _.orderBy(pls,"costo","desc");
+            var ord = r==='P' ? "team" : "costo";
+            var dir = r==='P' ? "asc" : "desc";
+            pls = _.orderBy(pls,ord,dir);
             return pls;
         };
 
